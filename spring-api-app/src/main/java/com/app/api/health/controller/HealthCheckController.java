@@ -24,6 +24,8 @@ public class HealthCheckController {
                 .health("ok")
                 .activeProfiles(Arrays.asList(environment.getActiveProfiles()))
                 .build();
+        
+        // ok로 보내줄 경우 HTTP STATUS가 200으로 반환, 파라미터로 body에 담겨서 반환
         return ResponseEntity.ok(healthCheckResponseDto);
     }
 }

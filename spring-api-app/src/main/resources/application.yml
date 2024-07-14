@@ -1,0 +1,33 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+spring:
+  # 데이터베이스 연결
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+      driver-class-name: org.h2.Driver
+
+  # jpa 제공 하는 ddl-auto 옵션
+  jpa:
+    hibernate:
+      ddl-auto: create
+  # console 창에 sql 출력
+  show-sql: true
+  properties:
+    hibernate:
+      format_sql: true    # console 창에 sql 예쁘게 출력
+
+  servlet:
+    multipart:
+      max-file-size: 10MB # 파일 업로드 요청 시 하나의 파일 크기를 10MB 제한
+      max-request-size: 100MB # 파일 업로드 요청 시 모든 파일 크기합을 100MB 제한
+
+logging:
+  level:
+    org.hibernate.type: trace  # console 창에 조건에 바인딩 되는 값 및 조회 결과 출력
+    
+
