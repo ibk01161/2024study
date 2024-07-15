@@ -1,0 +1,7 @@
+spring:
+  # H2 데이터 베이스 연결 (메모리 데이터 베이스로 실행 - 휘발성)
+  datasource:
+    url: jdbc:h2:mem:test
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
