@@ -4,7 +4,9 @@ import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
 @Getter
-public class ErrorCode {
+public enum ErrorCode {
+
+    ;
 
     private HttpStatus httpStatus;
     private String errorCode;
