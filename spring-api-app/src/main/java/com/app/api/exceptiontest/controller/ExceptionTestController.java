@@ -27,7 +27,7 @@ public class ExceptionTestController {
     @GetMapping("/business-exception-test")
     public String businessExceptionTest(@RequestParam("isError") String isError) {
         if ("true".equals(isError)) {
-            throw new BusinessException(ErrorCode.TEST);
+            throw new BusinessException(ErrorCode.TEST);                // 생성자로 errorCode를 받고 있음
         }
         return "ok";
     }
