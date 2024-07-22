@@ -1,0 +1,21 @@
+# DB 설정
+spring:
+  datasource:
+    url: jdbc:h2:tcp://localhost/~/jpashop #;MVCC=TRUE
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+
+# JPA 설정
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+#        show_sql: true        # 로그를 System.out.print로 찍기 때문에 운영환경에 알맞지 않음 대신 org.hibernate.SQL 사용
+        format_sql: true
+
+# log 설정
+logging:
+  level:
+    org.hibernate.SQL: debug      # jpa, hibernate로 생성하는 SQL이 다 로그로 남음 (logger를 통해 찍음)
