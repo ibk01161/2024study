@@ -30,5 +30,13 @@ spring:
 logging:
   level:
     org.hibernate.type: trace  # console 창에 조건에 바인딩 되는 값 및 조회 결과 , log level : TRACE > DEBUG > INFO > WARN > ERROR > FATAL
+    com.app: debug             # openfeign 로그를 보기 위해 프로젝트 루트 패키지 기준 로그 레벨을 DEBUG로 설정 (운영 환경에서는 info)
+
+feign:
+  client:
+    config:
+      default:
+        connectTimout: 5000
+        readTimeout: 5000
     
 
