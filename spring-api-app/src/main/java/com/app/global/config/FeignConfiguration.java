@@ -21,13 +21,13 @@ public class FeignConfiguration {
         return Logger.Level.FULL;
     }
 
-    // 새로 생성한 FeignClientErrorDecoder 빈 등록
+    // 새로 생성한 FeignClientErrorDecoder 빈 등록 (에러 처리 정책)
     @Bean
     public ErrorDecoder errorDecoder() {
         return new FeignClientExceptionErrorDecoder();
     }
 
-    // retry 설정
+    // retry 설정 (재시도 정책)
     @Bean
     public Retryer retryer() {
         return new Retryer.Default(1000, 2000, 3);      // period : 실행 주기, maxAttempts : 최대 재시도 횟수

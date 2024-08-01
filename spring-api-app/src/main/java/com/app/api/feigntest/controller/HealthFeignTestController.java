@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class HealthFeignTestController {
 
+    // 생성자 주입
     private final HelloClient helloClient;
 
     @GetMapping("/health/feign-test")

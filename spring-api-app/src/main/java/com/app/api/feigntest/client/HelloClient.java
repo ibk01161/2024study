@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @FeignClient(url = "http://localhost:8080", name = "helloClient")
 public interface HelloClient {
 
-    @GetMapping(value = "/api/health", consumes = "application/json")
+    @GetMapping(value = "/api/health", consumes = "application/json")           // spring MVC에서 사용하던 어노테이션 그대로 활용 가능
     HealthCheckResponseDto healthCheck();
 
 }
